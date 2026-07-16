@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Prezzo di riferimento di mercato solare svizzero (UFE)",
+        "description": "Configura il sensore per il prezzo di riferimento di mercato solare pubblicato trimestralmente dall'UFE (art. 15 EnFV), oltre a un prezzo di ripresa calcolato da esso.",
+        "data": {
+          "min_price_rp": "Prezzo minimo (Rp/kWh)",
+          "goo_surcharge_rp": "Supplemento garanzia d'origine (Rp/kWh)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "È possibile configurare una sola istanza di questa integrazione."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Impostazioni prezzo di riferimento",
+        "data": {
+          "min_price_rp": "Prezzo minimo (Rp/kWh)",
+          "goo_surcharge_rp": "Supplemento garanzia d'origine (Rp/kWh)"
+        }
+      }
+    }
+  }
+}

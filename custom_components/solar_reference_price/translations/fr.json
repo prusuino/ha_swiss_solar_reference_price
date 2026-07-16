@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Prix de référence du marché solaire suisse (OFEN)",
+        "description": "Configure le capteur pour le prix de référence du marché solaire publié trimestriellement par l'OFEN (art. 15 OEneR), ainsi qu'un prix de reprise calculé à partir de celui-ci.",
+        "data": {
+          "min_price_rp": "Prix minimum (Rp/kWh)",
+          "goo_surcharge_rp": "Supplément garantie d'origine (Rp/kWh)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Une seule instance de cette intégration peut être configurée."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Paramètres du prix de référence",
+        "data": {
+          "min_price_rp": "Prix minimum (Rp/kWh)",
+          "goo_surcharge_rp": "Supplément garantie d'origine (Rp/kWh)"
+        }
+      }
+    }
+  }
+}

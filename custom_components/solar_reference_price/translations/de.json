@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Referenzmarktpreis Solar Schweiz (BFE)",
+        "description": "Legt den Sensor für den quartalsweise vom BFE publizierten Referenzmarktpreis (Art. 15 EnFV) an, sowie einen daraus berechneten Einspeisepreis.",
+        "data": {
+          "min_price_rp": "Mindestpreis (Rp/kWh)",
+          "goo_surcharge_rp": "Herkunftsnachweis-Aufschlag (Rp/kWh)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Es kann nur eine Instanz dieser Integration eingerichtet werden."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Referenzmarktpreis-Einstellungen",
+        "data": {
+          "min_price_rp": "Mindestpreis (Rp/kWh)",
+          "goo_surcharge_rp": "Herkunftsnachweis-Aufschlag (Rp/kWh)"
+        }
+      }
+    }
+  }
+}

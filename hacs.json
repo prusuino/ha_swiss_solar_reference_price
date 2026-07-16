@@ -1,0 +1,5 @@
+{
+  "name": "Swiss Solar Reference Price (SFOE)",
+  "render_readme": true,
+  "homeassistant": "2024.1.0"
+}

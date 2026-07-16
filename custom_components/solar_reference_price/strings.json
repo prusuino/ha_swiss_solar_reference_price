@@ -1,0 +1,28 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Swiss Solar Reference Price (SFOE)",
+        "description": "Sets up the sensor for the quarterly solar reference market price published by the Swiss Federal Office of Energy (Art. 15 EnFV), plus a feed-in price computed from it.",
+        "data": {
+          "min_price_rp": "Minimum price (Rp/kWh)",
+          "goo_surcharge_rp": "Guarantee-of-origin surcharge (Rp/kWh)"
+        }
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Only one instance of this integration can be configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Reference Price Settings",
+        "data": {
+          "min_price_rp": "Minimum price (Rp/kWh)",
+          "goo_surcharge_rp": "Guarantee-of-origin surcharge (Rp/kWh)"
+        }
+      }
+    }
+  }
+}
