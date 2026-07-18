@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.0 — 2026-07-19
+
+- New diagnostic sensors (shown under the device's Diagnostics section), localized in all four languages:
+  - Source (Host) — host the quarterly price CSV is fetched from, full URL as attribute
+  - Path — path of the CSV file on the source host
+  - Quarter/Year — the most recent quarter the published data covers, so a stale source becomes visible
+  - Last Checked — timestamp of the last successful fetch and parse
+
 ## 1.0.0 — 2026-07-16
 
 Initial public release.

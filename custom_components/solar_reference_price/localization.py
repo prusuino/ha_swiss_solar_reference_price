@@ -55,6 +55,30 @@ STRINGS: dict[str, dict[str, str]] = {
         "fr": "Supplément garantie d'origine",
         "it": "Supplemento garanzia d'origine",
     },
+    "diagnostics_host_name": {
+        "de": "Diagnose: Quelle (Host)",
+        "en": "Diagnostics: Source (Host)",
+        "fr": "Diagnostic : source (hôte)",
+        "it": "Diagnostica: fonte (host)",
+    },
+    "diagnostics_path_name": {
+        "de": "Diagnose: Pfad",
+        "en": "Diagnostics: Path",
+        "fr": "Diagnostic : chemin",
+        "it": "Diagnostica: percorso",
+    },
+    "diagnostics_quarter_name": {
+        "de": "Diagnose: Quartal/Jahr",
+        "en": "Diagnostics: Quarter/Year",
+        "fr": "Diagnostic : trimestre/année",
+        "it": "Diagnostica: trimestre/anno",
+    },
+    "diagnostics_last_checked_name": {
+        "de": "Diagnose: Letzte Prüfung",
+        "en": "Diagnostics: Last Checked",
+        "fr": "Diagnostic : dernière vérification",
+        "it": "Diagnostica: ultimo controllo",
+    },
 }
 
 

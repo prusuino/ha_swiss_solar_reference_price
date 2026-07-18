@@ -8,6 +8,7 @@ import logging
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.util import dt as dt_util
 
 from .const import CSV_URL, DOMAIN, UPDATE_INTERVAL
 
@@ -55,4 +56,6 @@ class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
             "rp_kwh": history[-1]["rp_kwh"],
             "chf_kwh": round(float(latest["Price_pv_CHF_MWh"]) / 1000, 5),
             "history": history[-8:],
+            "quarters_total": len(history),
+            "last_checked": dt_util.utcnow().isoformat(),
         }
