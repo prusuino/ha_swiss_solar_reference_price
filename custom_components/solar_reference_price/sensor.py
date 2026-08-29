@@ -24,7 +24,7 @@ from .const import (
     DOMAIN,
 )
 from .coordinator import SolarReferencePriceCoordinator
-from .device import device_info as _device_info
+from .device import device_info as _device_info, entry_suffix
 from .localization import t
 
 
@@ -59,7 +59,10 @@ class ReferenceMarketPriceSensor(CoordinatorEntity[SolarReferencePriceCoordinato
         self._attr_name = t("reference_price_name", hass)
         self._attr_unique_id = f"{entry.entry_id}_reference_price"
         self._attr_device_info = _device_info(hass, entry)
-        self.entity_id = "sensor.solar_reference_price"
+        # Fixed object ids (here and below), independent of the localized
+        # name, with the entry's discriminator appended so they stay tied
+        # to their config entry.
+        self.entity_id = f"sensor.solar_reference_price_{entry_suffix(entry)}"
 
     @property
     def native_value(self):
@@ -94,7 +97,7 @@ class FeedInPriceSensor(CoordinatorEntity[SolarReferencePriceCoordinator], Senso
         self._attr_name = t("feedin_price_name", hass)
         self._attr_unique_id = f"{entry.entry_id}_feedin_price"
         self._attr_device_info = _device_info(hass, entry)
-        self.entity_id = "sensor.solar_reference_price_feedin_price"
+        self.entity_id = f"sensor.solar_reference_price_feedin_price_{entry_suffix(entry)}"
 
     def _min_price_rp(self) -> float:
         return self._entry.options.get(CONF_MIN_PRICE_RP, DEFAULT_MIN_PRICE_RP)
@@ -139,7 +142,9 @@ class _DiagnosticSensorBase(CoordinatorEntity[SolarReferencePriceCoordinator], S
         self._attr_name = t(name_key, hass)
         self._attr_unique_id = f"{entry.entry_id}_diagnostics_{id_suffix}"
         self._attr_device_info = _device_info(hass, entry)
-        self.entity_id = f"sensor.solar_reference_price_diagnostics_{id_suffix}"
+        self.entity_id = (
+            f"sensor.solar_reference_price_diagnostics_{id_suffix}_{entry_suffix(entry)}"
+        )
 
 
 class DiagnosticHostSensor(_DiagnosticSensorBase):

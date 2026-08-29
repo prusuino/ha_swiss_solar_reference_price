@@ -14,8 +14,14 @@ from .const import (
     DEFAULT_GOO_SURCHARGE_RP,
     DEFAULT_MIN_PRICE_RP,
     DOMAIN,
+    PRICE_RP_MAX,
+    PRICE_RP_MIN,
 )
 from .localization import t
+
+# Same range as the number entities: an out-of-range value is rejected by the
+# dialog instead of being stored and then shown outside the entity's bounds.
+_PRICE_RP = vol.All(vol.Coerce(float), vol.Range(min=PRICE_RP_MIN, max=PRICE_RP_MAX))
 
 
 def _schema(defaults: dict[str, float]) -> vol.Schema:
@@ -23,10 +29,10 @@ def _schema(defaults: dict[str, float]) -> vol.Schema:
         {
             vol.Required(
                 CONF_MIN_PRICE_RP, default=defaults[CONF_MIN_PRICE_RP]
-            ): vol.Coerce(float),
+            ): _PRICE_RP,
             vol.Required(
                 CONF_GOO_SURCHARGE_RP, default=defaults[CONF_GOO_SURCHARGE_RP]
-            ): vol.Coerce(float),
+            ): _PRICE_RP,
         }
     )
 

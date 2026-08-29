@@ -5,6 +5,7 @@ import csv
 import io
 import logging
 
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
@@ -18,10 +19,11 @@ _LOGGER = logging.getLogger(__name__)
 class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
     """Fetches the quarterly reference market prices published by the SFOE."""
 
-    def __init__(self, hass: HomeAssistant) -> None:
+    def __init__(self, hass: HomeAssistant, entry: ConfigEntry) -> None:
         super().__init__(
             hass,
             _LOGGER,
+            config_entry=entry,
             name=DOMAIN,
             update_interval=UPDATE_INTERVAL,
         )

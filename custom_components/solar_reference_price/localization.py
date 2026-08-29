@@ -1,10 +1,14 @@
 """Runtime string localization (entity names, device info).
 
-Home Assistant's built-in translation system (strings.json / translations/*.json)
-only covers config/options flow text. Entity names and device info are set
-directly by this integration's Python code and are not covered by that
-mechanism, so we do our own minimal lookup here, keyed by hass.config.language.
-Falls back to English for any language we don't have strings for.
+Home Assistant's translation system (strings.json / translations/*.json)
+covers the config/options flow text here. It could also translate entity
+names through translation keys, but it has no mechanism for the device
+name, manufacturer and model, and an object id generated from a translated
+entity name would differ per language. This integration therefore keeps
+fixed, non-localized object ids (set explicitly in sensor.py / number.py)
+and localizes the displayed names and the device info itself with this
+minimal lookup, keyed by hass.config.language. Falls back to English for
+any language there are no strings for.
 """
 from __future__ import annotations
 

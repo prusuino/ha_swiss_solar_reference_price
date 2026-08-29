@@ -1,4 +1,4 @@
-"""Shared device info for all platforms."""
+"""Shared device info and entry-id helper for all platforms."""
 from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry
@@ -17,3 +17,9 @@ def device_info(hass: HomeAssistant, entry: ConfigEntry) -> DeviceInfo:
         model=t("model", hass),
         entry_type=DeviceEntryType.SERVICE,
     )
+
+
+def entry_suffix(entry: ConfigEntry) -> str:
+    """Per-entry discriminator appended to the suggested object ids: the last
+    four characters of the config entry id, in lower case."""
+    return entry.entry_id[-4:].lower()
