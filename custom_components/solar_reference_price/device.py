@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.entity import DeviceInfo
+from homeassistant.helpers.device_registry import DeviceEntryType, DeviceInfo
 
 from .const import DOMAIN
 from .localization import t
@@ -15,5 +15,5 @@ def device_info(hass: HomeAssistant, entry: ConfigEntry) -> DeviceInfo:
         name=t("device_name", hass),
         manufacturer=t("manufacturer", hass),
         model=t("model", hass),
-        entry_type="service",
+        entry_type=DeviceEntryType.SERVICE,
     )

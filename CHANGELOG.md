@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 — 2026-08-29
+
+- Added an English translation file. Without it, English — the default language — fell back to raw translation keys in the setup and options dialogs.
+- The minimum supported Home Assistant version is now declared correctly as 2024.12.0. The options dialog has always required it, but hacs.json still claimed 2024.1.0.
+- The CHF/kWh conversion of the latest quarter now runs inside the same guard as the rest of the CSV parsing, so any future change to the SFOE file is reported as a data problem instead of an unhandled error.
+
 ## 1.1.0 — 2026-07-19
 
 - New diagnostic sensors (shown under the device's Diagnostics section), localized in all four languages:

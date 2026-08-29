@@ -48,13 +48,18 @@ class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
                 for r in rows
             ]
             latest = rows[-1]
+            # Converted inside the guard as well: a row that passed the
+            # comprehension above cannot fail here, but keeping every access
+            # to the CSV within the same try means a future column change is
+            # reported as a data problem, not as an unhandled error.
+            chf_kwh = round(float(latest["Price_pv_CHF_MWh"]) / 1000, 5)
         except Exception as err:
             raise UpdateFailed(f"Failed to parse the SFOE CSV: {err}") from err
 
         return {
             "quarter": history[-1]["quarter"],
             "rp_kwh": history[-1]["rp_kwh"],
-            "chf_kwh": round(float(latest["Price_pv_CHF_MWh"]) / 1000, 5),
+            "chf_kwh": chf_kwh,
             "history": history[-8:],
             "quarters_total": len(history),
             "last_checked": dt_util.utcnow().isoformat(),
