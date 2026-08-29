@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 — 2026-08-29
+
+- The feed-in price sensor and the two adjustable price parameters now carry the integration prefix in their entity ids: `sensor.solar_reference_price_feedin_price`, `number.solar_reference_price_min_price` and `number.solar_reference_price_goo_surcharge` (previously `sensor.feedin_price`, `number.min_price` and `number.goo_surcharge`). The old ids were generic enough to collide with entities of other integrations. **Existing installs keep their current ids**: Home Assistant applies the id suggested by an integration only when an entity is first created, so entities that already exist are not renamed and no automation, template or dashboard needs to change. The new ids apply to fresh setups (or when an entity is removed from the entity registry and recreated).
+
 ## 1.1.1 — 2026-08-29
 
 - Added an English translation file. Without it, English — the default language — fell back to raw translation keys in the setup and options dialogs.

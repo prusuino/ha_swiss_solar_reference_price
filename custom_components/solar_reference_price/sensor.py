@@ -94,7 +94,7 @@ class FeedInPriceSensor(CoordinatorEntity[SolarReferencePriceCoordinator], Senso
         self._attr_name = t("feedin_price_name", hass)
         self._attr_unique_id = f"{entry.entry_id}_feedin_price"
         self._attr_device_info = _device_info(hass, entry)
-        self.entity_id = "sensor.feedin_price"
+        self.entity_id = "sensor.solar_reference_price_feedin_price"
 
     def _min_price_rp(self) -> float:
         return self._entry.options.get(CONF_MIN_PRICE_RP, DEFAULT_MIN_PRICE_RP)

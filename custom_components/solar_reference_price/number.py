@@ -66,7 +66,7 @@ class MinPriceNumber(_OptionNumber):
         super().__init__(hass, entry)
         self._attr_name = t("min_price_name", hass)
         self._attr_unique_id = f"{entry.entry_id}_min_price"
-        self.entity_id = "number.min_price"
+        self.entity_id = "number.solar_reference_price_min_price"
 
 
 class GooSurchargeNumber(_OptionNumber):
@@ -79,4 +79,4 @@ class GooSurchargeNumber(_OptionNumber):
         super().__init__(hass, entry)
         self._attr_name = t("goo_surcharge_name", hass)
         self._attr_unique_id = f"{entry.entry_id}_goo_surcharge"
-        self.entity_id = "number.goo_surcharge"
+        self.entity_id = "number.solar_reference_price_goo_surcharge"
