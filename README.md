@@ -43,7 +43,7 @@ Entity names, the device name/manufacturer/model, and the config flow adapt auto
 
 2. Restart Home Assistant.
 
-Until the integration shows up in the HACS search, the button above adds it as a custom repository.
+The integration is listed in the HACS default store, so no custom repository is needed.
 
 ### Manual
 
