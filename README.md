@@ -77,6 +77,7 @@ template:
 - Only one instance of this integration can be configured (there is only one Swiss reference market price).
 - If the SFOE data source is unreachable or the CSV format changes, `sensor.solar_reference_price_<id>`, `sensor.solar_reference_price_feedin_price_<id>` and the diagnostic sensors become `unavailable` rather than reporting a stale or incorrect value.
 - This integration is unofficial and not affiliated with the SFOE. It only reads their published Open Data.
+- **Download diagnostics** (entry menu under **Settings → Devices & services**) gives the entry's configuration, what the integration last fetched and the current state of its entities, with coordinates and credentials redacted — attach it to an issue report when something looks wrong.
 
 ## Disclaimer
 

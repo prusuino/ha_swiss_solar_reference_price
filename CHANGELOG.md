@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0 — 2026-11-06
+
+- **New: diagnostics download.** The entry menu under **Settings → Devices & services** offers *Download diagnostics*: the entry's configuration, what was last fetched and the current state of its entities, with coordinates, credentials and other personal values redacted and long lists cut. Attach it to an issue report.
+
 ## 1.3.0 — 2026-08-29
 
 - Changing the minimum price or the guarantee-of-origin surcharge — through the two number entities or the integration's **Configure** dialog — now takes effect immediately: the feed-in price is recalculated on the spot, without reloading the integration and without downloading the SFOE CSV again. Previously every change reloaded all entities (briefly `unavailable`) and re-fetched the CSV.
