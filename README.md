@@ -72,6 +72,15 @@ template:
           {{ ((max(feed_in_w, 0) / 1000) * price) | round(6) }}
 ```
 
+## Removal
+
+1. **Settings → Devices & services → Swiss Solar Reference Price (SFOE)**, open the entry's menu (⋮) and choose **Delete**. The entities, their history and the device go with the entry, as do the two price parameters stored in its options.
+2. Remove the integration itself in the **Marketplace** (or HACS), then restart Home Assistant. With a manual installation, delete `custom_components/solar_reference_price` instead.
+
+## Quality scale
+
+The integration declares **Bronze** on the [Home Assistant integration quality scale](https://developers.home-assistant.io/docs/core/integration-quality-scale/): a config flow with tests, unique ids for every entity, brand images, installation and removal instructions, a connection check before an entry is created, no duplicate entries, runtime data on the config entry, and the other Bronze rules. The tier is self-assessed, as it is for every custom integration; the per-rule status, including what is still open for Silver and Gold, is in `custom_components/solar_reference_price/quality_scale.yaml`.
+
 ## Notes
 
 - Only one instance of this integration can be configured (there is only one Swiss reference market price).
