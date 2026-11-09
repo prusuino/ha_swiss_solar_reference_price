@@ -1,3 +1,5 @@
+import json
+from pathlib import Path
 """Constants for the Swiss Solar Reference Price integration."""
 from datetime import timedelta
 
@@ -16,3 +18,7 @@ DEFAULT_GOO_SURCHARGE_RP = 2.0
 PRICE_RP_MIN = 0.0
 PRICE_RP_MAX = 50.0
 PRICE_RP_STEP = 0.1
+
+# The integration's own version, shown on the service card. Read from the
+# manifest so that a release never needs to touch two places.
+VERSION: str = json.loads((Path(__file__).parent / "manifest.json").read_text(encoding="utf-8"))["version"]

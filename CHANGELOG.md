@@ -2,6 +2,7 @@
 
 ## 1.6.0 — 2026-11-09
 
+- **Version on the service card.** The integration's version now appears on its service card under Settings → Devices & services, where the entities are listed.
 - **Repair notices.** An unreachable or unreadable SFOE data file raises a notice under Settings → Repairs after three failed refreshes; it withdraws itself. No change to entities or configuration.
 
 ## 1.5.0 — 2026-11-09
