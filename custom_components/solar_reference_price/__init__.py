@@ -5,6 +5,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
 from .coordinator import SolarReferencePriceCoordinator
+from .issues import async_clear_entry_issues
 
 type SolarReferencePriceConfigEntry = ConfigEntry[SolarReferencePriceCoordinator]
 
@@ -34,4 +35,7 @@ async def _async_update_listener(hass: HomeAssistant, entry: SolarReferencePrice
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: SolarReferencePriceConfigEntry) -> bool:
-    return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+    unloaded = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+    if unloaded:
+        async_clear_entry_issues(hass, entry.entry_id)
+    return unloaded

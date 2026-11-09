@@ -24,5 +24,15 @@
         }
       }
     }
+  },
+  "issues": {
+    "unreachable": {
+      "title": "Swiss Solar Reference Price: Dienst nicht erreichbar",
+      "description": "Der Dienst unter {host} hat mehrere Aktualisierungen in Folge nicht beantwortet. Prüfe deine Internetverbindung; ist sie in Ordnung, ist der Dienst selbst gestört. Die Entitäten bleiben bis dahin nicht verfügbar und erholen sich von selbst; dieser Hinweis verschwindet mit der nächsten erfolgreichen Aktualisierung."
+    },
+    "unreadable": {
+      "title": "Swiss Solar Reference Price: Datendatei nicht lesbar",
+      "description": "Die BFE-Datei unter {host} wurde heruntergeladen, konnte aber mehrere Aktualisierungen in Folge nicht gelesen werden; ihr Format hat sich vermutlich geändert. Die Preissensoren bleiben nicht verfügbar, bis die Integration aktualisiert ist. Bitte melde es im Issue-Tracker der Integration."
+    }
   }
 }

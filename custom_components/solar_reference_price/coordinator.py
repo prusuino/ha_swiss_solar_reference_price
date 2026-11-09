@@ -13,6 +13,8 @@ from homeassistant.util import dt as dt_util
 
 from .const import CSV_URL, DOMAIN, UPDATE_INTERVAL
 
+from .issues import IssueReporter
+
 _LOGGER = logging.getLogger(__name__)
 
 
@@ -27,6 +29,7 @@ class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
             name=DOMAIN,
             update_interval=UPDATE_INTERVAL,
         )
+        self.issues = IssueReporter(hass, entry.entry_id)
 
     async def _async_update_data(self) -> dict:
         session = async_get_clientsession(self.hass)
@@ -35,7 +38,9 @@ class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
                 resp.raise_for_status()
                 text = await resp.text()
         except Exception as err:
+            self.issues.failure("unreachable", {"host": "www.bfe-ogd.ch"})
             raise UpdateFailed(f"SFOE reference market price source unreachable: {err}") from err
+        self.issues.clear("unreachable")
 
         try:
             rows = list(csv.DictReader(io.StringIO(text)))
@@ -56,7 +61,9 @@ class SolarReferencePriceCoordinator(DataUpdateCoordinator[dict]):
             # reported as a data problem, not as an unhandled error.
             chf_kwh = round(float(latest["Price_pv_CHF_MWh"]) / 1000, 5)
         except Exception as err:
+            self.issues.failure("unreadable", {"host": "www.bfe-ogd.ch"})
             raise UpdateFailed(f"Failed to parse the SFOE CSV: {err}") from err
+        self.issues.clear("unreadable")
 
         return {
             "quarter": history[-1]["quarter"],

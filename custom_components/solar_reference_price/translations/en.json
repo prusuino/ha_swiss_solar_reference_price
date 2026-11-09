@@ -24,5 +24,15 @@
         }
       }
     }
+  },
+  "issues": {
+    "unreachable": {
+      "title": "Swiss Solar Reference Price: service unreachable",
+      "description": "The service at {host} has not answered for several refreshes in a row. Check your internet connection; if it is fine, the service itself is down. The entities stay unavailable until then and recover on their own; this notice disappears with the next successful refresh."
+    },
+    "unreadable": {
+      "title": "Swiss Solar Reference Price: data file unreadable",
+      "description": "The SFOE file at {host} was downloaded but could not be read for several refreshes in a row; its format has probably changed. The price sensors stay unavailable until the integration is updated. Please report it on the integration's issue tracker."
+    }
   }
 }

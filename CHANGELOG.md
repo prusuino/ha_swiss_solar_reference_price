@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.0 — 2026-11-09
+
+- **Repair notices.** An unreachable or unreadable SFOE data file raises a notice under Settings → Repairs after three failed refreshes; it withdraws itself. No change to entities or configuration.
+
 ## 1.5.0 — 2026-11-09
 
 - **Quality scale Bronze.** The integration keeps its coordinator in the config entry's runtime data, the README gained removal instructions and a quality-scale section, and the manifest declares the **bronze** tier. A test suite (CSV reader with quarter ordering and error cases, config flow with range check, single instance and options) runs on every push. No change to entities or configuration.
