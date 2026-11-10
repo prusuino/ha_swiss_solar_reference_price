@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 <a href="https://www.buymeacoffee.com/prusuino"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee" height="20"></a>
 
+![Swiss Solar Reference Price](readme_header.png)
+
 A Home Assistant custom integration that tracks the Swiss **reference market price for solar power** (*Referenz-Marktpreis*, per Art. 15 EnFV), published quarterly by the Swiss Federal Office of Energy (SFOE), and computes a feed-in price from it.
 
 ## Background
