@@ -8,6 +8,15 @@
 
 A Home Assistant custom integration that tracks the Swiss **reference market price for solar power** (*Referenz-Marktpreis*, per Art. 15 EnFV), published quarterly by the Swiss Federal Office of Energy (SFOE), and computes a feed-in price from it.
 
+## Highlights
+
+- **The official quarterly price**: the reference market price for photovoltaics (Art. 15 EnFV) from the SFOE's open data, in Rp/kWh, with the quarter it belongs to.
+- **Your feed-in price, computed**: `max(reference price, minimum price) + guarantee-of-origin surcharge` in CHF/kWh — ready for the energy dashboard and cost calculations.
+- **Two numbers to match your grid operator**: minimum price and guarantee-of-origin surcharge, changeable at any time.
+- **Looks after itself**: the source is checked every 6 hours; diagnostic sensors show which file was read and when, and a repair notice appears if it cannot be read.
+- **Stable entity ids**: the same in every Home Assistant language.
+- **Set up in a minute**: two values and done; German, English, French and Italian; diagnostics download.
+
 ## Background
 
 Under the Swiss Energy Support Ordinance (EnFV), grid operators may base solar feed-in remuneration on a quarterly **reference market price** published by the [SFOE](https://www.bfe.admin.ch/). This integration fetches that price automatically from the SFOE's official Open Data CSV and turns it into Home Assistant entities you can use in dashboards, energy-cost calculations, or automations — instead of manually looking up and updating the value every quarter.
