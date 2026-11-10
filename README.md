@@ -14,6 +14,8 @@ Under the Swiss Energy Support Ordinance (EnFV), grid operators may base solar f
 
 ## What it provides
 
+![Example dashboard with the reference market price, the computed feed-in price, the two adjustable numbers and the quarterly history](docs/dashboard.png)
+
 | Entity | Type | Description |
 |---|---|---|
 | `sensor.solar_reference_price_<id>` | Sensor | Current quarterly PV reference market price, in **Rp/kWh** (Swiss Rappen). Attributes: `quarter` (e.g. `"Q2 2026"`), `chf_kwh` (same value in CHF/kWh), `history` (list of the last 8 quarters) |
