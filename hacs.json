@@ -1,5 +1,6 @@
 {
   "name": "Swiss Solar Reference Price (SFOE)",
+  "country": "CH",
   "zip_release": true,
   "filename": "solar_reference_price.zip",
   "render_readme": true,

@@ -1,6 +1,7 @@
 {
   "domain": "solar_reference_price",
   "name": "Swiss Solar Reference Price (SFOE)",
+  "categories": ["energy.energy_prices", "energy.solar_batteries"],
   "codeowners": ["@prusuino"],
   "config_flow": true,
   "documentation": "https://github.com/prusuino/ha_swiss_solar_reference_price",
@@ -9,5 +10,5 @@
   "issue_tracker": "https://github.com/prusuino/ha_swiss_solar_reference_price/issues",
   "quality_scale": "bronze",
   "requirements": [],
-  "version": "1.6.1"
+  "version": "1.6.2"
 }
